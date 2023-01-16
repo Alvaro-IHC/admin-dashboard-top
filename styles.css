@@ -7,8 +7,27 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  border: 1px solid orange;
 }
 
 body {
   font-size: 1.6rem;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+}
+
+header {
+  grid-column: 2 / 3;
+  background-color: black;
+}
+
+aside {
+  grid-row: 1 / 3;
+  background-color: mediumturquoise;
+}
+
+main {
+  grid-area: 2 / 2 / 3 /3 ;
+  background-color: gray;
 }

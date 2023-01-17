@@ -7,27 +7,272 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  border: 1px solid orange;
 }
 
 body {
   font-size: 1.6rem;
-  height: 100vh;
+  max-height: 100vh;
   display: grid;
-  grid-template-columns: 2fr 7fr;
+  grid-template-columns: 2fr 11fr;
+  grid-template-rows: 18% 82%;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 header {
   grid-column: 2 / 3;
-  background-color: black;
+  display: grid;
+  grid-template-rows: min-content;
+  padding: 2.5rem 4rem;
+  z-index: 100;
+  gap: 3rem;
+  min-height: fit-content;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-first-row {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  font-size: 2rem;
+  align-items: center;
+}
+
+.search-nav {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 2rem;
+  align-items: center;
+}
+
+.search {
+  min-width: 50rem;
+  width: 40%;
+  background-color: #e2e9f1;
+  padding: .7rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.profile-brief {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 3rem;
+  align-items: center;
+}
+
+.profile-brief i:hover{
+  cursor: pointer;
+}
+
+.profile-logo {
+  font-size: 3.5rem;
+  color: #facc15;
+}
+
+.profile-logo i {
+  background-color: rgba(0, 0, 0, 0.822);
+  border-radius: 50%;
+  border: .2rem solid #facc15;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.header-second-row {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-desc {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-desc .profile-logo {
+  font-size: 4.5rem;
+}
+
+.user {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(3, 10rem);
+  gap: 2.5rem;
+  list-style-type: none;
+}
+
+.navbar li {
+  font-weight: bold;
+  padding: .7rem 1rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  color: white;
+  background-color: #1892d5;
+}
+
+.navbar li:hover {
+  cursor: pointer;
 }
 
 aside {
   grid-row: 1 / 3;
-  background-color: mediumturquoise;
+  background-color: #1892d5;
 }
 
-main {
+.sidebar {
+  color: white;
+  padding: 4rem;
+  display: grid;
+  gap: 5rem;
+  align-items: center;
+}
+
+.logo {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  font-size: 2.8rem;
+  font-weight: 900;
+  gap: .5rem;
+}
+
+.page-links, .config-links{
+  font-size: 1.8rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.page-link, .config-link {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  font-weight: bold;
+}
+
+.page-link:hover, .config-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.main-container {
   grid-area: 2 / 2 / 3 /3 ;
-  background-color: gray;
+  background-color: #e2e9f1;
+  padding: 3.5rem 2.5rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 14fr 5fr;
+  grid-template-rows: min-content 1fr;
+  grid-auto-flow: column;
+  max-height: 100%;
+
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+}
+
+.projects {
+  grid-row: 1 / span 2;  
+}
+
+.projects>div {
+  overflow-y: auto;
+  height: 70rem;
+}
+
+.projects-container {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  padding: 0 1rem 1rem 0;
+}
+
+.project {
+  background-color: white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 1.2rem;
+  border-left: .8rem solid #f1b529;
+  padding: 3rem;
+  display: grid;
+  grid-template-rows: 2.5rem 1fr 3rem;
+}
+
+.project-desc {
+  font-weight: 300;
+}
+
+.icons-container {
+  align-self: end;
+  display: grid;
+  grid-template-columns: repeat(3, 2rem);
+  justify-content: end;
+  gap: 2rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.annoucements {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.annoucements-container, .trends-container {
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.annoucement-desc {
+  font-weight: 300;
+}
+
+.annoucement hr {
+  margin: 2rem -1rem 0;
+}
+
+.trending {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.trend {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  gap: 3rem;
+}
+
+.trend-logo{
+  background-color: #1892d5;
+  color: white;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+}
+
+.trend-username {
+  font-weight: bold;
+}
+
+.project-name {
+  font-weight: 300;
 }
